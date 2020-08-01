@@ -182,7 +182,9 @@ extern class Timestamp extends LongLike<Timestamp> {
 	static function fromBits(lowBits:Float, highBits:Float):Timestamp;
 	static function fromString(str:String, ?opt_radix:Float):Timestamp;
 }
-extern class BsonTopLevel {
+
+@:jsRequire('bson')
+extern class Bson {
 	static function serialize(object:Dynamic, ?options:SerializeOptions):Buffer;
 	static function serializeWithBufferAndIndex(object:Dynamic, buffer:Buffer, ?options:SerializeWithBufferAndIndexOptions):Float;
 	static function deserialize(buffer:Buffer, ?options:DeserializeOptions):Dynamic;

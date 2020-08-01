@@ -1,5 +1,0 @@
--cp src
--D analyzer-optimize
---library hxnodejs
--main Main
---js bin/js/test.js

@@ -1,4 +1,4 @@
-package bp.mongo;
+package bp;
 import js.lib.*;
 import haxe.ds.*;
 import js.node.events.EventEmitter;
@@ -73,7 +73,7 @@ typedef MongoClientCommonOption = {
 	@:optional
 	var returnNonCachedInstance : Bool;
 };
-typedef MongoCallback<T> = { };
+typedef MongoCallback<T> = Dynamic;
 extern class MongoError extends Error {
 	function new(message:haxe.extern.EitherType<String, haxe.extern.EitherType<Error, Dynamic>>):Void;
 	static function create(options:haxe.extern.EitherType<String, haxe.extern.EitherType<Error, Dynamic>>):MongoError;
@@ -1257,9 +1257,7 @@ typedef GridFSBucketOptions = {
 	@:optional
 	var readPreference : Dynamic;
 };
-typedef GridFSBucketErrorCallback = {
-	>MongoCallback<Void>,
-};
+typedef GridFSBucketErrorCallback = Dynamic;
 typedef GridFSBucketFindOptions = {
 	@:optional
 	var batchSize : Float;
@@ -1499,8 +1497,9 @@ typedef IndexSpecification = {
 	@:optional
 	var collation : CollationDocument;
 };
-extern class MongodbTopLevel {
-	@:override(function(uri:String, callback:MongoCallback<MongoClient>) {})
-	@:override(function(uri:String, options:MongoClientOptions, callback:MongoCallback<MongoClient>) {})
-	static function connect(uri:String, ?options:MongoClientOptions):Promise<MongoClient>;
+@:jsRequire('mongodb')
+extern class Mongo {
+	// @:override(function(uri:String, callback:MongoCallback<MongoClient>) {})
+	// @:override(function(uri:String, options:MongoClientOptions, callback:MongoCallback<MongoClient>) {})
+	static function connect(uri:String, ?options:Dynamic):Promise<MongoClient>;
 }
