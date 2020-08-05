@@ -6,10 +6,13 @@ import tink.CoreApi;
 
 using Lambda;
 using bp.test.Utils;
+import tink.testrunner.Reporter;
 import bp.Mongo;
 class RunTests {
 	static function main() {
-		Runner.run(TestBatch.make([new Test(),])).handle(Runner.exit);
+		ANSI.stripIfUnavailable = false;
+		var reporter = new BasicReporter(new AnsiFormatter());
+		Runner.run(TestBatch.make([new Test(),]), reporter).handle(Runner.exit);
 	}
 }
 @:asserts
