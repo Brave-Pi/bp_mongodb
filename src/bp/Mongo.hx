@@ -1155,7 +1155,7 @@ extern class Cursor<T> extends js.node.stream.Readable<Cursor<T>> {
 	function maxTimeMS(value:Float):Cursor<T>;
 	function min(min:Dynamic):Cursor<T>;
 	@:overload(function(callback:MongoCallback<haxe.extern.EitherType<T, Null<Dynamic>>>):Void { })
-	function next():Promise<haxe.extern.EitherType<T, Null<Dynamic>>>;
+	function next():Promise<T>;
 	function project(value:Dynamic):Cursor<T>;
 	function read(size:Float):haxe.extern.EitherType<String, haxe.extern.EitherType<Buffer, Void>>;
 	function returnKey(returnKey:Dynamic):Cursor<T>;
