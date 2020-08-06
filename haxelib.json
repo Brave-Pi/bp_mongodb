@@ -1,0 +1,23 @@
+{
+    "name": "bp_mongodb",
+    "license": "MIT",
+    "tags": [
+      "brave-pi",
+      "mongodb",
+      "mongo",
+      "db",
+      "brave",
+      "pi"
+    ],
+    "classPath": "src",
+    "contributors": [
+      "piboistudios",
+      "PhilipHayes"
+    ],
+    "releasenote": "initial release",
+    "version": "0.0.0",
+    "url": "https://github.com/brave-pi/bp_mongodb/",
+    "dependencies": {
+      "hxnodejs": ""
+    }
+  }
