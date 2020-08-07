@@ -1147,7 +1147,7 @@ extern class Cursor<T> extends js.node.stream.Readable<Cursor<T>> {
 	function hasNext():Promise<Bool>;
 	function hint(hint:haxe.extern.EitherType<String, Dynamic>):Cursor<T>;
 	function isClosed():Bool;
-	function limit(value:Float):Cursor<T>;
+	function limit(value:Int):Cursor<T>;
 	function map<U>(transform:T -> U):Cursor<U>;
 	function max(max:Dynamic):Cursor<T>;
 	function maxAwaitTimeMS(value:Float):Cursor<T>;
@@ -1163,7 +1163,7 @@ extern class Cursor<T> extends js.node.stream.Readable<Cursor<T>> {
 	function setCursorOption(field:String, value:Dynamic):Cursor<T>;
 	function setReadPreference(readPreference:Dynamic):Cursor<T>;
 	function showRecordId(showRecordId:Dynamic):Cursor<T>;
-	function skip(value:Float):Cursor<T>;
+	function skip(value:Int):Cursor<T>;
 	function snapshot(snapshot:Dynamic):Cursor<T>;
 	function sort(keyOrList:haxe.extern.EitherType<String, haxe.extern.EitherType<Array<Dynamic>, Dynamic>>, ?direction:Float):Cursor<T>;
 	function stream(?options:{ @:optional
