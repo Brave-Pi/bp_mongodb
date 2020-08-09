@@ -847,7 +847,7 @@ typedef DeleteWriteOpResultObject = {
 	@:optional
 	var connection : Dynamic;
 	@:optional
-	var deletedCount : Float;
+	var deletedCount : Int;
 };
 typedef FindAndModifyWriteOpResultObject<TSchema> = {
 	@:optional
